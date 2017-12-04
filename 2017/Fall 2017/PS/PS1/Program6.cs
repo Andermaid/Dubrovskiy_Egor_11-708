@@ -5,6 +5,8 @@ namespace ConsoleApp11
 {
     class Program
     {
+	// ---check--- для 4 ваша программа выводит 2, хотя должно быть 1
+	// для 5 - 0, хотя должно быть 2
         static void Main()
         {
             Console.WriteLine("Введите число n");
