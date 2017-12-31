@@ -16,6 +16,7 @@ namespace ConsoleApp18
             double x = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите е");
             double e = double.Parse(Console.ReadLine());
+			// ---check--- почему 1/e? точность - это не число знаков после запятой
             double countOfNumbersAfterPoint = Math.Pow(e, -1);
             Console.WriteLine("Введите а");
             double a = double.Parse(Console.ReadLine());
@@ -40,6 +41,7 @@ namespace ConsoleApp18
 
         static double GetSumOfSqrt(double x, double e, int n, double lastResult)
         {
+			// --- check--- вы каждый раз всё возводите в степень? надо было делать в цикле, домножая только на нужные значения
             double result = Math.Pow(-1, n) * Math.Pow(x, n) / (1 - (2 * n)) / Math.Pow(4, n); ;
             if (n > 0) result *= Factorial(2 * n) / Math.Pow(Factorial(n), 2);
             if (Math.Abs(lastResult - result) < e)

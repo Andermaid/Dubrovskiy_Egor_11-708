@@ -7,6 +7,7 @@ namespace ConsoleApp20
 {
     class Program
     {
+		// ---check--- надо было вынести вычисление значения подынтегральной функции в отдельным метод!
         static void Main()
         {
             Console.WriteLine("Введите количество промежутков");
@@ -70,6 +71,7 @@ namespace ConsoleApp20
             return integral;
         }
 
+		// ---check--- число итераций должно было задаваться числом n!
         static double MonteCarloMethod()
         {
             Random random = new Random();
@@ -77,11 +79,13 @@ namespace ConsoleApp20
             double[] pointsX = new double[1000000];
             for (int i = 0; i < 1000000; i++)
             {
+				// ---check--- почему так?
                 pointsX[i] = 1 + random.NextDouble() + random.NextDouble();
                 points[pointsX[i]] = random.NextDouble();
             }
             double allPointsCount = points.Count;
             double rightPointsCount = 0;
+			// ---check--- а нельзя было это сделать в предыдущем цикле?
             foreach (var e in points)
                 if (e.Value <= Math.Cos(Math.Sin(e.Key))) rightPointsCount++;
             return 2 * rightPointsCount / allPointsCount;

@@ -11,6 +11,7 @@ namespace ConsoleApp19
         {
             Console.WriteLine("Введите е");
             double e = double.Parse(Console.ReadLine());
+			// ---check--- опять с  точностью что-то мудрите
             double countOfNumbersAfterPoint = Math.Pow(e, -1);
             Console.WriteLine("Результат рекуррентных вычислений = " + (((int)(RecursionOfCos(e, 0, 0) * countOfNumbersAfterPoint)) / countOfNumbersAfterPoint));
             Console.ReadLine();
