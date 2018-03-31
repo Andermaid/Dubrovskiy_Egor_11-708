@@ -5,10 +5,10 @@ namespace Sem1
 {
     class List<T>: IEnumerable<T>
     {
-        private Node<T> Head;
-        private Node<T> Tail;
+        public Node<T> Head;
+        public Node<T> Tail;
 
-        private int Count { get; set; }
+        public int Count { get; set; }
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -48,7 +48,7 @@ namespace Sem1
             if (index == 0)
                 AddFirst(value);
             else if (index == (Count - 1))
-                AddLast(value);
+                Add(value);
             else
             {
                 Node<T> currentNode = Head;
@@ -79,7 +79,7 @@ namespace Sem1
             Count++;
         }
 
-        public void AddLast(T value)
+        public void Add(T value)
         {
             Node<T> node = new Node<T>(value);
             if (Count == 0)
